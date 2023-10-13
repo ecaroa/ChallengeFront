@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-loader',
@@ -9,22 +8,7 @@ import { LoadingController } from '@ionic/angular';
 export class LoaderComponent implements OnInit {
   private loading: any;
 
-  constructor(private loadingCtrl: LoadingController) {}
+  constructor() {}
 
   ngOnInit() {}
-
-  showLoader() {
-    this.loadingCtrl.create({
-      message: 'Loading....'
-    }).then(overlay => {
-      this.loading = overlay;
-      this.loading.present();
-    });
-  }
-
-  hideLoader() {
-    if (this.loading) {
-      this.loading.dismiss();
-    }
-  }
 }

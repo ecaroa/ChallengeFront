@@ -1,26 +1,26 @@
 import { Injectable } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { LoaderComponent } from './loader/loader';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoaderService {
 
-  private loader: any;
+  constructor(private modalController: ModalController, private router: Router) {}
 
-  constructor(private loadingCtrl: LoadingController) {}
+  async showLoader(time: number, urlToNavigate: string) {
+      const loader = await this.modalController.create({
+        component: LoaderComponent,
+        backdropDismiss: false
+      });
 
-  async showLoader() {
-    this.loader = await this.loadingCtrl.create({
-      message: 'Loading....',
-    });
+      setTimeout(() => {
+        this.modalController.dismiss()
+        this.router.navigateByUrl(urlToNavigate);
+      }, time);
 
-    await this.loader.present();
-  }
-
-  hideLoader() {
-    if (this.loader) {
-      this.loader.dismiss();
-    }
+      return await loader.present();
   }
 }
