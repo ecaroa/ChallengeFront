@@ -8,14 +8,23 @@ import { LoaderService } from '../loader.service';
   styleUrls: ['./customers.page.scss'],
 })
 export class CustomersPage implements OnInit {
-  
+
   constructor(private loaderService: LoaderService) { }
 
   ngOnInit() {
   }
 
   goToHome() {
-    this.loaderService.showLoader(4000, '/home');
+    const timeLoader = 4000;
+    const navigateTo = '/home';
+    const timeBetweenImages = 1000;
+    const imagesTexts = [
+      { image: '../../assets/images/lago.jpg', text: 'Cargando...' },
+      { image: '../../assets/images/montanasIA.jpg', text: 'Loading...' },
+      { image: '../../assets/images/arbolSolitario.jpg', text: 'Carregando...' }
+    ];
+
+    this.loaderService.showLoader(timeLoader, navigateTo, timeBetweenImages, imagesTexts);
   }
 
 }

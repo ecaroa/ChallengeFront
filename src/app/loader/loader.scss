@@ -23,19 +23,6 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0.5; /* Opacidad de las imágenes de fondo */
-    animation: backgroundAnimation 10s infinite linear; /* Animación de las imágenes de fondo */
-}
-
-.image1 {
-    background-image: url('../../assets/images/lago.jpg');
-}
-
-.image2 {
-    background-image: url('../../assets/images/montanasIA.jpg');
-}
-
-.image3 {
-    background-image: url('../../assets/images/arbolSolitario.jpg');
 }
 
 .loading-text {
