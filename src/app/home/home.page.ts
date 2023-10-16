@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
     const imagesTexts = [
       { image: '../../assets/images/lago.jpg', text: 'Cargando...' },
       { image: '../../assets/images/montanasIA.jpg', text: 'Loading...' },
-      { image: '../../assets/images/arbolSolitario.jpg', text: 'Carregando...' }
+      { image: '../../assets/images/arbolSolitario.jpg', text: 'Waiting...' }
     ];
 
     this.loaderService.showLoader(timeLoader, navigateTo, timeBetweenImages, imagesTexts);
